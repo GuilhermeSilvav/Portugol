@@ -1,0 +1,54 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro qtdnumpositivo = 0, qtdnumnegativo = 0, num1 = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0
+
+		escreva("Informe o numero 1: ")
+		leia(num1)
+		escreva("Informe o numero 2: ")
+		leia(num2)
+		escreva("Informe o numero 3: ")
+		leia(num3)
+		escreva("Informe o numero 4: ")
+		leia(num4)
+		escreva("Informe o numero 5: ")
+		leia(num5)
+
+		se (num1 < 0){
+			qtdnumnegativo += 1
+		}
+		se(num2 < 0){
+			qtdnumnegativo += 1
+		}
+		se(num3 < 0){
+			qtdnumnegativo += 1
+		}
+		se(num4 < 0){
+			qtdnumnegativo += 1
+		}
+		se(num5 < 0){
+			qtdnumnegativo += 1
+		}
+		se (num1 >= 0){
+			qtdnumpositivo += 1
+		}
+		se(num2 >= 0){
+			qtdnumpositivo += 1
+		}
+		se(num3 >= 0){
+			qtdnumpositivo += 1
+		}
+		se(num4 >= 0){
+			qtdnumpositivo += 1
+		}
+		se(num5 >= 0){
+			qtdnumpositivo += 1
+		}
+
+		escreva("\nA quantidade de numeros positivos: ", qtdnumpositivo)
+		escreva("\n\nA quantidade de numeros negativos: ", qtdnumnegativo)
+
+	}
+}
