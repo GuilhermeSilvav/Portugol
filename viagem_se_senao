@@ -1,0 +1,36 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia nomeviagem, nomeviagem2
+		inteiro kminicialrodovia, kminicial2rodovia, kmfinalrodovia, kmfinal2rodovia,
+			maiorViagem, kmpercorridorodovia, kmpercorrido2rodovia, kmmaiordistancia = 0
+
+		escreva("A rodovia inicia no Km 1 e vai até o Km 99.\n"
+		+ "Informe o nome da viagem: ")
+		leia(nomeviagem)
+		escreva("Informe o Kilometro inicial da rodovia: ")
+		leia(kminicialrodovia)
+		escreva("Informe o Kilometro final da rodovia: ")
+		leia(kmfinalrodovia)
+		escreva("Informe o nome da viagem 2: ")
+		leia(nomeviagem2)
+		escreva("Informe o Kilometro inicial da rodovia 2: ")
+		leia(kminicial2rodovia)
+		escreva("Informe o Kilometro final da rodovia 2: ")
+		leia(kmfinal2rodovia)
+
+		kmpercorridorodovia = kmfinalrodovia - kminicialrodovia
+		kmpercorrido2rodovia = kmfinal2rodovia - kminicial2rodovia
+
+		se(kmpercorridorodovia > kmpercorrido2rodovia){
+			kmmaiordistancia = kmpercorridorodovia
+		}senao{
+			kmmaiordistancia = kmpercorrido2rodovia
+		}
+
+		escreva("A viagem de maior distancia tem: ", kmmaiordistancia + " Kilometros")
+
+	}
+}
