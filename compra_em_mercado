@@ -1,0 +1,45 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia produto = "", produto2 = ""
+		caracter formaPagamento, resposta = 'n'
+		real descontoTotal = 0.0, valorProduto = 0.0, valorProduto2 = 0.0, valorTotalProdutos = 0.0,
+				valorTotalProdutossemdesconto = 0.0, valorTotalProdutoscomdesconto = 0.0
+
+		escreva("Passe o produto: ")
+		leia(produto)
+		escreva("Informe o valor do produto: ")
+		leia(valorProduto)
+		escreva("Deseja passar o segundo produto? ")
+		leia(resposta)
+		
+		se(resposta == 's'){
+			escreva("Passe o segundo produto: ")
+			leia(produto2)
+			escreva("Informe o valor do segundo produto: ")
+			leia(valorProduto2)
+			
+			}senao{
+				resposta = 'n'
+		}
+		
+		escreva("Digite a forma de pagamento: (D) para dinheiro ou (C) para cartão")
+		leia(formaPagamento)
+		
+		valorTotalProdutossemdesconto = valorProduto + valorProduto2
+		
+		se (formaPagamento == 'd'){
+			descontoTotal = valorTotalProdutossemdesconto * 10 / 100
+			valorTotalProdutoscomdesconto = valorTotalProdutossemdesconto - descontoTotal
+			}senao{
+				valorTotalProdutossemdesconto = valorProduto + valorProduto2
+		}
+
+		escreva("\nO valor total: ", valorTotalProdutossemdesconto)
+		escreva("\nDesconto: ", descontoTotal)
+		escreva("\nValor a ser pago pelo cliente: ", valorTotalProdutoscomdesconto)
+
+	}
+}
