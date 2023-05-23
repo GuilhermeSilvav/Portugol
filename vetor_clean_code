@@ -1,0 +1,32 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia nome [999], condicao = "S"
+		inteiro idade [999], contador = 0
+		
+		
+		faca 
+		{
+		
+		escreva ("Informe o nome do aluno: ")
+		leia (nome[contador])
+
+		escreva ("Informe a idade do aluno: ")
+		leia (idade[contador])
+
+		escreva ("Deseja informar mais um aluno? (S)Sim ou (N)Não ")
+		leia (condicao)
+
+		contador = contador + 1
+
+		}enquanto (condicao == "S")
+
+		para (inteiro contador2 = 0; contador2 < contador; contador2++)
+		{
+		escreva("\nNome do aluno: " + nome[contador2] + "\nIdade do aluno: " + idade[contador2])
+		escreva("\n-----------------------------")
+		}		
+	} 
+}
