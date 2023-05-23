@@ -1,0 +1,37 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		cadeia vetor_nomes[16777216]
+		inteiro vetor_idades[16777216]
+		inteiro contador = 0
+		cadeia resposta = "S"
+
+		faca
+		{	
+		
+			se (resposta != "n")
+			{
+			escreva("Informe o nome do aluno: ")
+			leia(vetor_nomes[contador])
+			escreva("Informe a idade do aluno: ")
+			leia(vetor_idades[contador])	
+	
+			contador++
+			}
+
+			escreva("\nDeseja informar mais nomes?(s/n): ")
+			leia(resposta)
+			escreva("-----------------------------\n")
+
+		} enquanto (resposta != "n")
+	
+		para (inteiro i = 0; i < contador; i++)
+		{
+			escreva("Nome do aluno " + (i + 1) + ": " + vetor_nomes[i] + "\nIdade do aluno " + (i + 1) + ": " + vetor_idades[i])
+			escreva("\n-----------------------------\n")
+		}		
+	}
+}
