@@ -1,0 +1,62 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		cadeia nomeAluno[999]
+		inteiro contador = 0, idadeAluno [999]
+		caracter resposta = 's'
+		
+		faca {
+			escreva("\nInforme o nome do aluno(" + (contador + 1) + ") :")
+			leia(nomeAluno[contador])
+
+			escreva("Informe a idade do aluno(" + (contador + 1) + ") :")
+			leia(idadeAluno[contador])
+
+			escreva("\nDeseja continuar (s) ou (n)?")
+			leia(resposta)
+			
+			contador ++
+			
+		} enquanto (resposta == 's' ou resposta == 'S')
+		
+		para(inteiro contador2 = contador -1programa
+{
+	
+	funcao inicio()
+	{
+
+		cadeia nomeAluno[999]
+		inteiro contador = 0, idadeAluno [999]
+		caracter resposta = 's'
+		
+		faca {
+			escreva("\nInforme o nome do aluno(" + (contador + 1) + ") :")
+			leia(nomeAluno[contador])
+
+			escreva("Informe a idade do aluno(" + (contador + 1) + ") :")
+			leia(idadeAluno[contador])
+
+			escreva("\nDeseja continuar (s) ou (n)?")
+			leia(resposta)
+			
+			contador ++
+			
+		} enquanto (resposta == 's' ou resposta == 'S')
+		
+		para(inteiro contador2 = 0; contador2 < contador ; contador2++)
+		{
+		escreva("Aluno: " + nomeAluno[contador2] + "\n")
+		escreva("Idade: " + idadeAluno[contador2] + "\n")
+		}
+	}
+}
+; contador2 >=0 ; contador2--)
+		{
+			escreva("Aluno: " + nomeAluno[contador2] + "\n")
+			escreva("Idade: " + idadeAluno[contador2] + "\n")
+		}
+	}
+}
