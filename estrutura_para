@@ -4,11 +4,11 @@ programa
 	funcao inicio()
 	{
 
-		inteiro num = 0
+		const cadeia pulaLinha = "\n"
  
 		para (inteiro i = 0; i <= 4; i++)
 		{	
-		escreva("\na"  )
+		escreva(pulaLinha +"a"  )
 		}
 		
 		para(inteiro i = 1; i <= 5; i++)
