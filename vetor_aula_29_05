@@ -1,0 +1,34 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		cadeia vetorNomes
+		real vetorNota[99] , notaTotal = 0.0, nota =0.0, media = 0, totalNota = 0
+		inteiro contador = 0, quantidadeNotas = 0
+		cadeia resposta = "n"
+
+		faca{
+			escreva("Informe o nome do aluno: ")
+			leia(vetorNomes)
+		
+			escreva("Informe a quantidade de notas: ")
+			leia(quantidadeNotas)
+			
+		para(inteiro i = 1; i <= quantidadeNotas; i ++){
+			vetorNota [i] = 0
+			escreva("Nota" + i +": ")
+			leia(nota)
+			}
+			nota = totalNota
+			media = totalNota / quantidadeNotas
+			escreva("A media é: " + media)
+			escreva("\nDeseja continuar? (s) ou (n): ")
+			leia(resposta)
+			escreva("-----------------------------\n")
+		}
+		enquanto (resposta == "s")
+    
+	}
+}
