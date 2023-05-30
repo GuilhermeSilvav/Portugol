@@ -1,0 +1,14 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		cadeia letrasVetor [13] = {"A", "B","C", "D","E", "F","G", "H","I", "J","L", "M","N"}
+ 
+		para (inteiro i = 0; i <= 12; i++)
+		{	
+		escreva("\n", letrasVetor[i])
+		}
+	}
+}
