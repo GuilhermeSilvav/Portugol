@@ -5,8 +5,8 @@ programa
 	{
 
 		cadeia vetorNomes
-		real vetorNota[99] , notaTotal = 0.0, nota =0.0, media = 0, totalNota = 0
-		inteiro contador = 0, quantidadeNotas = 0
+		real vetorNota[99] , notaTotal = 0.0, nota[99], media = 0, somaNota
+		inteiro contador=0, quantidadeNotas = 0
 		cadeia resposta = "n"
 
 		faca{
@@ -16,14 +16,17 @@ programa
 			escreva("Informe a quantidade de notas: ")
 			leia(quantidadeNotas)
 			
-		para(inteiro i = 1; i <= quantidadeNotas; i ++){
+		para(inteiro i = 0; i < quantidadeNotas; i ++){
 			vetorNota [i] = 0
-			escreva("Nota" + i +": ")
-			leia(nota)
+			escreva("Nota" + (i+1) +": ")
+			leia(nota[contador])
 			}
-			nota = totalNota
-			media = totalNota / quantidadeNotas
-			escreva("A media é: " + media)
+			somaNota = 0.0
+			
+		para(contador = 0; contador < quantidadeNotas; contador ++){
+			somaNota += nota[contador]
+			}
+			media = somaNota / quantidadeNotas
 			escreva("\nDeseja continuar? (s) ou (n): ")
 			leia(resposta)
 			escreva("-----------------------------\n")
