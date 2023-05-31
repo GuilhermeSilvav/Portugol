@@ -1,0 +1,15 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia pularLinha = "\n"
+		
+		escreva ("Fila 4")
+
+		para (inteiro contador = 2; contador <= 7; contador ++){
+			escreva (pularLinha + contador)
+			escreva (pularLinha + (contador * 2))
+		}
+	}
+}
