@@ -1,0 +1,27 @@
+programa
+{
+	
+cadeia nome
+	inteiro idade
+	funcao inicio()
+	{
+		imprime("Bem vindo")
+		entrada()
+		saida()
+		imprime("Fim do programa")
+		
+	}
+	funcao imprime(cadeia texto){
+		escreva("\n-----"+ texto + "------\n")
+	}
+	funcao entrada(){
+		escreva("\n Informe seu nome: ")
+		leia(nome)
+		escreva("\n Informe sua idade: ")
+		leia(idade)
+	}
+	funcao saida(){
+		escreva("\nSeu nome: "+ nome)
+		escreva("\nSua idade: "+ idade)
+	}
+}
