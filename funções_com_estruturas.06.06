@@ -3,18 +3,17 @@ programa
 
 	cadeia informarDados [999]
 	inteiro contador = 0
-	inteiro opcao = 0
-	
+	inteiro opcao = 0, produto = -1, respostas = -1
 	funcao inicio()
 	{
 		faca{
 				
-			escreva("\nEscolha uma das opções: \n\n(1) Inserir\n(2) Exibir\n(3) Encerrar ")
+			escreva("\nEscolha uma das opções: \n\n(1) Inserir\n(2) Exibir\n(3) Encerrar\n(4) excluir ")
 			leia(opcao)
 			inserir()
 			exibir()
-			
-			}enquanto((opcao == 1) ou (opcao == 2))
+			excluir()
+			}enquanto((opcao == 1) ou (opcao == 2)ou (opcao == 4))
 	}
 	
 	funcao inserir()
@@ -25,24 +24,44 @@ programa
 			faca{
 				escreva("Informe os dados: ")
 				leia(informarDados[contador])
-
-				contador ++
+				se (informarDados[contador] == ""){
+					faca
+					{
+						escreva("Voce não informou os dados! \nInforme os dados: ")
+						leia(informarDados[contador])
+					}enquanto(informarDados[contador] == "")
+				}
+				contador ++	
+				
 			
 				escreva("Os dados estão corretos? ")
 				leia(resposta)
 			
 			}enquanto(resposta == 'n')
 				
-			}
+		}
 	}
 	funcao exibir()
 	{
 		se (opcao == 2){
-
 			para(inteiro i = 0; i < contador; i++)
-				escreva("\nProduto " + informarDados[i] + ":")
+			escreva("\nProduto "+(produto ++) + ":" + informarDados[i] )
 		}
 	}
+	funcao excluir()
+	{
+		se (opcao == 4){
+
+			inteiro excluirProduto
+			
+			escreva("Escolha o indice que deseja excluir a partir de 0: ")
+			leia(excluirProduto)
+			
+			informarDados[excluirProduto] = ""
+			
+		}
+	}
+	
+	
 }
 	
-
