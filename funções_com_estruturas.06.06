@@ -2,18 +2,21 @@ programa
 {
 
 	cadeia informarDados [999]
-	inteiro contador = 0
+	inteiro contador = 0, excluirProduto = -1
 	inteiro opcao = 0, produto = -1, respostas = -1
 	funcao inicio()
 	{
-		faca{
+		faca
+		{
 				
-			escreva("\nEscolha uma das opções: \n\n(1) Inserir\n(2) Exibir\n(3) Encerrar\n(4) excluir ")
+			escreva("\nEscolha uma das opções: \n\n(1) Inserir\n(2) Atualizar\n(3) Excluir\n(4) Exibir\n(5) Encerrar")
 			leia(opcao)
 			inserir()
-			exibir()
+			atualizar()
 			excluir()
-			}enquanto((opcao == 1) ou (opcao == 2)ou (opcao == 4))
+			exibir()
+			
+		}enquanto((opcao == 1) ou (opcao == 2)ou (opcao == 4))
 	}
 	
 	funcao inserir()
@@ -44,15 +47,19 @@ programa
 	funcao exibir()
 	{
 		se (opcao == 2){
-			para(inteiro i = 0; i < contador; i++)
-			escreva("\nProduto "+(produto ++) + ":" + informarDados[i] )
+			
+			faca
+			{
+				para(inteiro i = 0; i < contador; i++)
+						escreva("\nProduto "+ (produto++) + ":" + informarDados[i] )
+						produto = -1
+			}enquanto(informarDados[contador] != "")
 		}
 	}
 	funcao excluir()
 	{
 		se (opcao == 4){
 
-			inteiro excluirProduto
 			
 			escreva("Escolha o indice que deseja excluir a partir de 0: ")
 			leia(excluirProduto)
@@ -61,7 +68,9 @@ programa
 			
 		}
 	}
-	
-	
+	funcao atualizar()
+	{
+		
+	}
 }
 	
