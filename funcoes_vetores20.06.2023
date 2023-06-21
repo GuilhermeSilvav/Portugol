@@ -1,0 +1,100 @@
+programa
+{
+
+	cadeia informarDados [999], classificacao [999] 
+	inteiro contador = 0, excluirProduto = -1
+	inteiro opcao = 0, produto = -1, respostas = -1
+	funcao inicio()
+	{
+		faca
+		{
+				
+			escreva("\nEscolha uma das opções: \n\n(1) Inserir\n(2) Exibir\n(3) Encerrar\n(4) Excluir\n(5) Atualizar\n(6) Impressão")
+			leia(opcao)
+			inserir()
+			exibir()
+			excluir()
+			atualizar()
+			impressao()
+			
+		}enquanto((opcao == 1) ou (opcao == 2)ou (opcao == 4))
+	}
+	
+	funcao inserir()
+	{
+		se (opcao == 1){
+		caracter resposta
+
+			faca{
+				escreva("Informe os dados: ")
+				leia(informarDados[contador])
+				escreva("Informe a classificação do produto: ")
+				leia(classificacao[contador])
+				
+				se (informarDados[contador] == ""){
+					faca
+					{
+						escreva("Voce não informou os dados! \nInforme os dados: ")
+						leia(informarDados[contador])
+					}enquanto(informarDados[contador] == "")
+				}
+				contador ++	
+				
+			
+				escreva("Os dados estão corretos? ")
+				leia(resposta)
+			
+			}enquanto(resposta == 'n')
+				
+		}
+	}
+	funcao exibir()
+	{
+		se (opcao == 2){
+			
+			faca
+			{
+				para(inteiro i = 0; i < contador; i++)
+						escreva("\n\nProduto "+ (produto++) + ":" + informarDados[i]+ "\nClassificação:"+ classificacao[i] )
+						produto = -1
+			}enquanto(informarDados[contador] != "")
+		}
+	}
+	funcao excluir()
+	{
+		se (opcao == 4){
+
+			
+			escreva("Escolha o indice que deseja excluir a partir de 0: ")
+			leia(excluirProduto)
+			
+			informarDados[excluirProduto] = ""
+			classificacao[excluirProduto] = ""
+		}
+	}
+	funcao atualizar()
+	{
+		inteiro editarProduto
+		cadeia nomeProduto
+
+		se (opcao == 5){
+			escreva ("Qual produto voce deseja atualizar? ")
+			leia(editarProduto)
+			escreva ("\nInforme o novo Produto: ")
+			leia(nomeProduto)
+			informarDados[editarProduto] = nomeProduto
+			}
+	}
+	funcao impressao()
+	{
+		se (opcao == 6){
+			para(inteiro i = 0; i < contador; i++)
+				escreva("\nLista Crescente " +(produto++) + ": " + informarDados[i] + " * Classificação: " + classificacao[i])
+				produto = -1
+		}
+		
+	}
+	
+}
+
+	
