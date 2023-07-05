@@ -1,0 +1,292 @@
+programa
+{
+	const cadeia banco_login = "adm", banco_senha = "adm"
+		 cadeia pula = "\n"
+		 inteiro opcao = 0
+		 cadeia produto [999]
+		 cadeia classificacao [999]
+		 inteiro contador = 0
+		 inteiro numeroProduto = -1
+		 real valorProduto [999]
+		 inteiro estoque [999]
+		 inteiro quantidadeProduto
+		 real valorTotal [999]
+	
+	funcao inicio()
+	{
+		
+		logico resultado = falso
+		resultado = Login()
+		se (resultado){
+			escreva(("Login/senha correto") + pula)
+			
+			faca{
+			
+				ImprimeMenu()
+				leia(opcao)
+
+				escolha(opcao){
+					caso 1:
+						inserirProduto		()
+						pare
+					caso 2:
+						atualizar			()
+						pare
+					caso 3:
+						excluir			()
+						pare
+					caso 4:
+						exibir			()		
+						pare
+					caso 5:
+						exibirOrdem		()
+						pare
+					caso 6:
+						exibirClassificacao	()
+						pare
+					caso 7:
+						addEstoque		()
+						pare
+					caso 8:
+						removerEstoque		()
+						pare
+					caso 9:
+						valorProdutos		()
+						pare
+				}
+			}enquanto(opcao != 10)
+			
+
+		}senao{
+			escreva("Login/senha incorreto")
+		}
+		
+	}
+	
+	funcao logico Login()
+	{
+		
+		cadeia login, senha
+		logico resultado = falso
+
+		escreva("Informe o Login: "	)
+		leia(login)
+		escreva("Informe sua senha: "	)
+		leia(senha)
+
+		se(banco_login == login e banco_senha == senha){
+			resultado = verdadeiro
+		}
+		
+		retorne resultado
+
+	}
+	
+	funcao ImprimeMenu()
+	{
+		escreva(pula + ("   ****  MENU  ****")+ pula				 )
+		escreva(pula + ("Escolha uma das opções:"				))
+		escreva(pula + ("(1) Inserir produto."					))
+		escreva(pula + ("(2) Atualizar produto."				))	
+		escreva(pula + ("(3) Excluir produto."					))
+		escreva(pula + ("(4) Exibir todos os produtos."			))
+		escreva(pula + ("(5) Exibir por ordem."					))
+		escreva(pula + ("(6) Exibir produtos por classificação."	))
+		escreva(pula + ("(7) Adicionar estoque. "				))
+		escreva(pula + ("(8) Remover estoque. "					))
+		escreva(pula + ("(9) Adicionar Valor Produto. "			))
+		escreva(pula + ("(10) Encerrar. ")+ pula	 			 )
+	}
+
+	funcao inserirProduto()
+	{
+		
+		cadeia nomeProduto = "", classificacaoLeia
+
+		faca{
+			escreva("Informe o nome do produto: ")
+			leia(nomeProduto)
+			se (nomeProduto == "") {
+				escreva("Nome do produto inválido!" + pula)
+			}
+		}enquanto(nomeProduto == "")
+		
+		faca{
+			escreva("Informe a clasificação do produto: ")
+			leia(classificacaoLeia)			
+			se (classificacaoLeia==""){
+				escreva("Classificação do produto inválido!" + pula)
+			}
+		}enquanto(classificacaoLeia=="")		
+		
+		produto[contador] = nomeProduto
+		classificacao[contador] = classificacaoLeia
+		contador ++			
+	}
+	
+	funcao atualizar()
+	{
+		inteiro editarProduto
+		cadeia nomeProduto
+
+
+		escreva ("Qual produto voce deseja atualizar? ")
+		leia(editarProduto)
+		
+		se (produto[editarProduto]!=""){			
+			faca{
+				escreva (pula + ("Informe o novo Produto: "))
+				leia(nomeProduto)
+				se(nomeProduto == ""){
+					escreva("Produto invalido" + pula)
+				}
+			}enquanto(classificacao[contador] != "")
+			
+			produto[editarProduto] = nomeProduto
+			
+		}senao{
+			escreva("Indice invalido!")
+		}
+	}	
+	
+	funcao excluir()
+	{	
+		inteiro excluirProduto		
+
+		escreva("Escolha produto você deseja excluir? ")
+		leia(excluirProduto)
+		
+		se (produto[excluirProduto] != ""){
+			produto[excluirProduto] = ""
+			classificacao[excluirProduto] = ""	
+			valorProduto[excluirProduto] = 0.0	
+			valorTotal[excluirProduto] = 0.0
+				
+		}senao{
+			escreva("Classificação do produto inválido!" + pula)
+		}
+	 
+	}
+
+	funcao exibir()
+	{
+		se (opcao == 4){
+			para(inteiro i = 0; i < contador; i++)
+				se (produto[i] != "")
+				escreva(pula + ("---------------" + pula + "* Produto " +(numeroProduto++) + ": " + produto[i] + pula + "* Classificação: " + classificacao[i] + pula + "* Quantidade estoque: " + estoque[i] + pula + "* Valor Unitario: " + valorProduto[i] + pula + "* Valor total: "+ valorTotal[i] + pula + "--------------" + pula))
+				numeroProduto = -1
+		}
+	}
+	
+	funcao exibirOrdem(){
+		
+		cadeia ordem = ""
+
+		escreva("Escolha a ordem: (D) Decrescente/ (C) Crescente" + pula)
+		leia(ordem)
+		se (ordem == "D"){
+			para (inteiro i = contador; i >= 0; i--){
+				se (produto[i] != ""){
+					escreva("Produto (" + i +"): " + produto[i] + " * Classificação: " + classificacao[i] + pula)
+				}
+			}
+		}senao {
+			para (inteiro i = 0; i < contador; i++){
+				se (produto[i] != ""){
+					escreva("Produto (" + i +"): " + produto[i] + " * Classificação: " + classificacao[i] + pula )
+				}
+			}
+		}
+
+	}
+
+	funcao exibirClassificacao()
+	{
+		cadeia ordemClassificacao = ""
+		
+		escreva("Informa a classificação que deseja exibir: " + pula)
+		leia(ordemClassificacao)
+
+		para (inteiro i = 0; i <= contador; i++){
+			se (classificacao[i] == ordemClassificacao){
+				escreva("Produto (" + i +"): " + produto[i] + " * Classificação: " + classificacao[i] + pula)
+			}		
+		}	
+	}
+	
+	funcao addEstoque()
+	{							///---- nao esta deixando aparecer o resultado em exibir, conferir
+		inteiro editarEstoque
+		 
+
+		escreva ("Qual indice deseja editar estoque? ")
+		leia(editarEstoque)
+		
+		se (produto[editarEstoque] != ""){			
+			faca{
+				escreva (pula + ("Informe a quantidade de estoque do produto: "))
+				leia(quantidadeProduto)
+				se(quantidadeProduto <= 0){
+					escreva("Quantidade invalida! " + pula)
+				}
+			
+			}enquanto(estoque[editarEstoque] != 0)				
+
+			estoque[editarEstoque] = quantidadeProduto
+		
+		}senao{
+			escreva("Produto inválido")
+		}
+	}	
+	
+	funcao removerEstoque()
+	{	
+		
+		inteiro removerEstoques
+
+		escreva ("Qual indice deseja remover produto? ")
+		leia(removerEstoques)
+		
+		se (produto[removerEstoques] != ""){			
+			faca{
+				escreva (pula + ("Informe a quantidade de estoque para remover: "))
+				leia(quantidadeProduto)
+				se(quantidadeProduto < 1){
+					escreva("Quantidade invalida! " + pula)
+				}
+			
+			}enquanto(quantidadeProduto < 1)				
+
+			estoque[removerEstoques] -= quantidadeProduto
+		
+		}senao{
+			escreva("Produto inválido")
+		}
+		
+	}
+
+	funcao valorProdutos()
+	{	
+		inteiro indiceValor
+		real valorUnitario
+
+		escreva("Qual o indice que deseja informar o valor: " + pula)
+		leia(indiceValor)
+
+			se(produto[indiceValor] != ""){
+				faca{
+					escreva("Informe o valor do produto: " + pula)
+					leia(valorUnitario)
+					
+					se (valorUnitario < 0.1){
+						escreva ("Valor invalido: " + pula)
+					
+					}
+				
+				}enquanto (valorUnitario < 0.1)
+
+				valorProduto[indiceValor] = valorUnitario
+				valorTotal[indiceValor] = quantidadeProduto * valorUnitario
+			}
+	}
+}
